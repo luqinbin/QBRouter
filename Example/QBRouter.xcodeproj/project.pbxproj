@@ -38,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		09D489096B43B92EDCBF7810 /* Pods-QBRouter_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QBRouter_Example.debug.xcconfig"; path = "Target Support Files/Pods-QBRouter_Example/Pods-QBRouter_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		48959E395D01DD82BA70D75F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		48959E395D01DD82BA70D75F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* QBRouter_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QBRouter_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,10 +61,10 @@
 		657512FBDC7D67133FE135D3 /* Pods_QBRouter_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QBRouter_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		792211737748912E88D09B61 /* Pods_QBRouter_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QBRouter_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D5660730387217ED9FD088C /* QBRouter.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = QBRouter.podspec; path = ../QBRouter.podspec; sourceTree = "<group>"; };
+		7D5660730387217ED9FD088C /* QBRouter.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = QBRouter.podspec; path = ../QBRouter.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4C283C9B526936323D076B0 /* Pods-QBRouter_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QBRouter_Example.release.xcconfig"; path = "Target Support Files/Pods-QBRouter_Example/Pods-QBRouter_Example.release.xcconfig"; sourceTree = "<group>"; };
-		AFA80B10E76FDFFAAD331106 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		AFA80B10E76FDFFAAD331106 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		DA18880F98014FF041FE94B6 /* Pods-QBRouter_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QBRouter_Tests.release.xcconfig"; path = "Target Support Files/Pods-QBRouter_Tests/Pods-QBRouter_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		FE8726347BA47C806BEAF6A4 /* Pods-QBRouter_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QBRouter_Tests.debug.xcconfig"; path = "Target Support Files/Pods-QBRouter_Tests/Pods-QBRouter_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,7 +193,6 @@
 				FE8726347BA47C806BEAF6A4 /* Pods-QBRouter_Tests.debug.xcconfig */,
 				DA18880F98014FF041FE94B6 /* Pods-QBRouter_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +257,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

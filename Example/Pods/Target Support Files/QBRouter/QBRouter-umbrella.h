@@ -10,6 +10,13 @@
 #endif
 #endif
 
+#import "QBRouterDefine.h"
+#import "QBRouterInfo.h"
+#import "QBRouterExtentionProtocol.h"
+#import "QBRouterProtocol.h"
+#import "QBRouterHeader.h"
+#import "QBRouter.h"
+#import "QBRouterUtils.h"
 
 FOUNDATION_EXPORT double QBRouterVersionNumber;
 FOUNDATION_EXPORT const unsigned char QBRouterVersionString[];

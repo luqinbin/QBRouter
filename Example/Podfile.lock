@@ -1,5 +1,5 @@
 PODS:
-  - QBRouter (0.1.0)
+  - QBRouter (0.0.1)
 
 DEPENDENCIES:
   - QBRouter (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  QBRouter: bee6af65f783274d15a2a4373089390433165a82
+  QBRouter: 35c48084cd7b142873176cc54caf1240a93dfecc
 
 PODFILE CHECKSUM: 6f62f1104f01d45eccaaf9bf77661e11de127118
 
