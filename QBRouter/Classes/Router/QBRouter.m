@@ -488,6 +488,7 @@ static QBRouter * router = nil;
         } else {
             presentVC = viewController;
         }
+        presentVC.modalPresentationStyle = viewController.modalPresentationStyle;
         [topVC presentViewController:presentVC animated:animation completion:^{
             if (completionHandler) {
                 completionHandler(YES,nil);
