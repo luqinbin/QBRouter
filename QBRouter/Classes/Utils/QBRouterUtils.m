@@ -326,7 +326,7 @@
 + (UIWindow *)currentActivityWindow
 {
     UIWindow *window = [[UIApplication sharedApplication] keyWindow];
-    if (window.windowLevel != UIWindowLevelNormal) {
+    if (window == nil || window.windowLevel != UIWindowLevelNormal) {
         NSArray *windows = [[UIApplication sharedApplication] windows];
         for (UIWindow *tempWindow in windows) {
             if (tempWindow.windowLevel == UIWindowLevelNormal) {
