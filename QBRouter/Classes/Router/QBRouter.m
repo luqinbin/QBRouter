@@ -200,7 +200,13 @@ static QBRouter * router = nil;
  @param completionHandler 完成回调
  */
 + (void)openURLWithRouterInfo:(QBRouterInfo * _Nullable)routerInfo completionHandler:(QBRouterCompletionCallback)completionHandler {
-    [[QBRouter standardRouter] openURLWithRouterInfo:routerInfo completionHandler:completionHandler];
+    if ([NSThread isMainThread]) {
+        [[QBRouter standardRouter] openURLWithRouterInfo:routerInfo completionHandler:completionHandler];
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[QBRouter standardRouter] openURLWithRouterInfo:routerInfo completionHandler:completionHandler];
+        });
+    }
 }
 
 /**
@@ -534,7 +540,13 @@ static QBRouter * router = nil;
  @param completionHandler 跳转结果
  */
 + (void)applicationOpenURLWithURL:(NSString * _Nullable)url completionHandler:(QBRouterCompletionCallback _Nullable)completionHandler {
-    return [[QBRouter standardRouter]applicationOpenURLWithURL:url completionHandler:completionHandler];
+    if ([NSThread isMainThread]) {
+        [[QBRouter standardRouter]applicationOpenURLWithURL:url completionHandler:completionHandler];
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[QBRouter standardRouter]applicationOpenURLWithURL:url completionHandler:completionHandler];
+        });
+    }
 }
 
 /**
