@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "QBRouterAnimatedTransition.h"
 #import "QBRouterDefine.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -25,6 +26,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 是否预处理 */
 @property (assign, nonatomic) BOOL isPreprocese;
+
+@property (assign, nonatomic) QBRouterTranstionType transtionType;
+
+@property (strong, nonatomic) QBRouterAnimatedTransition *animatedTransition;
 
 /** 是否有动画  默认YES */
 @property (assign, nonatomic) BOOL animation;

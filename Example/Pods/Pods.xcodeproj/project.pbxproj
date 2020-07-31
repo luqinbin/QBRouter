@@ -14,6 +14,8 @@
 		3670D6A72E41BD1D360DF96BA49A7BFF /* QBRouterUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C194D463CB865675907EA6B287269B /* QBRouterUtils.m */; };
 		5C190FCDDC57BB9CF4F75CBBFEF88FAB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		7C6B052DEEA2876405AD67CCECEE3DBB /* QBRouterInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FE04906AB536F2249FEED2A2FFC9EF /* QBRouterInfo.m */; };
+		8EB6A1A724D41BC400B45B96 /* QBRouterAnimatedTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EB6A1A524D41BC400B45B96 /* QBRouterAnimatedTransition.h */; };
+		8EB6A1A824D41BC400B45B96 /* QBRouterAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB6A1A624D41BC400B45B96 /* QBRouterAnimatedTransition.m */; };
 		933FBD6B424CF70841679ACB45F0EE1A /* QBRouter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 631144446F83D8CE2A0029067220C337 /* QBRouter-dummy.m */; };
 		A919FC8BA6F77B4A0C723AB7441C09E3 /* QBRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = FD681D93254FBE2ADB83E2573E0EECDC /* QBRouter.m */; };
 		AC2CCEB510A96F5FB64E0015F1C52C12 /* QBRouterExtentionProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 722B497BD21766207C63A9C48329EC69 /* QBRouterExtentionProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -63,6 +65,8 @@
 		78EAAEB84F1B408EC04BDB2C2A892F5B /* QBRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QBRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		840B85F751CEA0E442221CA9C86DF907 /* QBRouter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = QBRouter.modulemap; sourceTree = "<group>"; };
 		859C0A51BA3DA57A9C009F5AC2B206FE /* QBRouter-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "QBRouter-Info.plist"; sourceTree = "<group>"; };
+		8EB6A1A524D41BC400B45B96 /* QBRouterAnimatedTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QBRouterAnimatedTransition.h; sourceTree = "<group>"; };
+		8EB6A1A624D41BC400B45B96 /* QBRouterAnimatedTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QBRouterAnimatedTransition.m; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A25449FD2998B5B1D2D3986F39D990D7 /* Pods-QBRouter_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QBRouter_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A66BAE59653ED2852C919A8CC8EBC91B /* Pods-QBRouter_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QBRouter_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -272,6 +276,8 @@
 			children = (
 				B31EB21C79F79A93921D18AA1D584192 /* QBRouterInfo.h */,
 				E8FE04906AB536F2249FEED2A2FFC9EF /* QBRouterInfo.m */,
+				8EB6A1A524D41BC400B45B96 /* QBRouterAnimatedTransition.h */,
+				8EB6A1A624D41BC400B45B96 /* QBRouterAnimatedTransition.m */,
 			);
 			name = Model;
 			path = QBRouter/Classes/Model;
@@ -324,6 +330,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EB6A1A724D41BC400B45B96 /* QBRouterAnimatedTransition.h in Headers */,
 				1C0C1CCB0F0F9F1ADB7D1DED8391052B /* Pods-QBRouter_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,6 +460,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C1F655274E09D209C6548422C97AC10 /* Pods-QBRouter_Example-dummy.m in Sources */,
+				8EB6A1A824D41BC400B45B96 /* QBRouterAnimatedTransition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

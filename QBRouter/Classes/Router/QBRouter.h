@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "QBRouterInfo.h"
+#import "QBRouterAnimatedTransition.h"
 #import "QBRouterDefine.h"
 #import "QBRouterProtocol.h"
 #import "QBRouterExtentionProtocol.h"
@@ -100,6 +101,19 @@ NS_ASSUME_NONNULL_BEGIN
  @param completionHandler 跳转结果
  */
 + (void)openViewController:(UIViewController *)viewController transtionType:(QBRouterTranstionType)transtionType animation:(BOOL)animation completionHandler:(QBRouterCompletionCallback _Nullable)completionHandler;
+
+/**
+ 打开控制器
+ @param viewController 控制器
+ @param transtionType  跳转方式
+ @param animation      动画
+ @param animatedTransition      动画代理类
+ @param completionHandler 跳转结果
+ */
++ (void)openViewController:(UIViewController *)viewController
+             transtionType:(QBRouterTranstionType)transtionType
+        animatedTransition:(QBRouterAnimatedTransition *)animatedTransition
+                 animation:(BOOL)animation completionHandler:(QBRouterCompletionCallback _Nullable)completionHandler;
 
 /**
  打开外链URL

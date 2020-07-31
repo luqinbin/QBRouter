@@ -436,19 +436,19 @@ static QBRouter * router = nil;
  打开控制器
  @param viewController 控制器
  @param transtionType  跳转方式
- @param animation      动画
+ @param animation      是否有动画效果
  @param completionHandler 跳转结果
  */
 + (void)openViewController:(UIViewController *)viewController transtionType:(QBRouterTranstionType)transtionType animation:(BOOL)animation completionHandler:(QBRouterCompletionCallback _Nullable)completionHandler {
     
-    return [[QBRouter standardRouter]openViewController:viewController transtionType:transtionType animation:animation completionHandler:completionHandler];
+    return [[QBRouter standardRouter] openViewController:viewController transtionType:transtionType animation:animation completionHandler:completionHandler];
 }
 
 /**
  打开控制器
  @param viewController 控制器
  @param transtionType  跳转方式
- @param animation      动画
+ @param animation      是否有动画效果
  @param completionHandler 跳转结果
  */
 - (void)openViewController:(UIViewController *)viewController transtionType:(QBRouterTranstionType)transtionType animation:(BOOL)animation completionHandler:(QBRouterCompletionCallback _Nullable)completionHandler {
@@ -460,10 +460,18 @@ static QBRouter * router = nil;
         //如果顶层是UIAlertController 先移除后弹出
         if ([topVC isKindOfClass:[UIAlertController class]]) {
             [topVC dismissViewControllerAnimated:YES completion:^{
-                [weakSelf jumpToViewController:viewController transtionType:transtionType animation:animation completionHandler:completionHandler];
+                [weakSelf jumpToViewController:viewController
+                                 transtionType:transtionType
+                            animatedTransition:nil
+                                     animation:animation
+                             completionHandler:completionHandler];
             }];
         } else {
-            [weakSelf jumpToViewController:viewController transtionType:transtionType animation:animation completionHandler:completionHandler];
+            [weakSelf jumpToViewController:viewController
+                             transtionType:transtionType
+                        animatedTransition:nil
+                                 animation:animation
+                         completionHandler:completionHandler];
         }
     } else {
         if (completionHandler) {
@@ -473,16 +481,58 @@ static QBRouter * router = nil;
 }
 
 /**
+ 打开控制器
+ @param viewController 控制器
+ @param transtionType  跳转方式
+ @param animatedTransition      动画代理类
+ @param animation      是否有动画效果
+ @param completionHandler 跳转结果
+ */
++ (void)openViewController:(UIViewController *)viewController
+             transtionType:(QBRouterTranstionType)transtionType
+        animatedTransition:(QBRouterAnimatedTransition *)animatedTransition
+                 animation:(BOOL)animation
+         completionHandler:(QBRouterCompletionCallback _Nullable)completionHandler {
+    [[QBRouter standardRouter] openViewController:viewController
+                                    transtionType:transtionType
+                               animatedTransition:animatedTransition
+                                        animation:animation
+                                completionHandler:completionHandler];
+}
+
+/**
+ 打开控制器
+ @param viewController 控制器
+ @param transtionType  跳转方式
+ @param animatedTransition      动画代理类
+ @param animation      是否有动画效果
+ @param completionHandler 跳转结果
+ */
+- (void)openViewController:(UIViewController *)viewController
+             transtionType:(QBRouterTranstionType)transtionType
+        animatedTransition:(QBRouterAnimatedTransition *)animatedTransition
+                 animation:(BOOL)animation
+         completionHandler:(QBRouterCompletionCallback _Nullable)completionHandler {
+    
+}
+
+/**
  跳转控制器
  @param viewController 控制器
  @param transtionType  跳转方式
- @param animation      动画
+ @param animatedTransition      动画代理类
+ @param animation      是否有动画效果
  @param completionHandler 跳转结果
  */
-- (void)jumpToViewController:(UIViewController *)viewController transtionType:(QBRouterTranstionType)transtionType animation:(BOOL)animation completionHandler:(QBRouterCompletionCallback _Nullable)completionHandler {
+- (void)jumpToViewController:(UIViewController *)viewController
+               transtionType:(QBRouterTranstionType)transtionType
+          animatedTransition:(QBRouterAnimatedTransition *)animatedTransition
+                   animation:(BOOL)animation
+           completionHandler:(QBRouterCompletionCallback _Nullable)completionHandler {
     // 根据跳转类型进行跳转
     UIViewController *topVC = [QBRouterUtils topViewController];
     if (transtionType == QBRouterTranstionTypeNativePush && topVC.navigationController) {
+        topVC.navigationController.delegate = animatedTransition.navigationControllerDelegate;
         [topVC.navigationController pushViewController:viewController animated:animation];
         if (completionHandler) {
             completionHandler(YES,nil);
@@ -494,6 +544,7 @@ static QBRouter * router = nil;
         } else {
             presentVC = viewController;
         }
+        presentVC.transitioningDelegate = animatedTransition.transitioningDelegate;
         presentVC.modalPresentationStyle = viewController.modalPresentationStyle;
         [topVC presentViewController:presentVC animated:animation completion:^{
             if (completionHandler) {
