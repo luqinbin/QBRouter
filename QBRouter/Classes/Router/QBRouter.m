@@ -452,32 +452,7 @@ static QBRouter * router = nil;
  @param completionHandler 跳转结果
  */
 - (void)openViewController:(UIViewController *)viewController transtionType:(QBRouterTranstionType)transtionType animation:(BOOL)animation completionHandler:(QBRouterCompletionCallback _Nullable)completionHandler {
-    
-    if (viewController) {
-        //根据跳转类型进行跳转
-        UIViewController *topVC = [QBRouterUtils topViewController];
-        QBWeakSelf;
-        //如果顶层是UIAlertController 先移除后弹出
-        if ([topVC isKindOfClass:[UIAlertController class]]) {
-            [topVC dismissViewControllerAnimated:YES completion:^{
-                [weakSelf jumpToViewController:viewController
-                                 transtionType:transtionType
-                            animatedTransition:nil
-                                     animation:animation
-                             completionHandler:completionHandler];
-            }];
-        } else {
-            [weakSelf jumpToViewController:viewController
-                             transtionType:transtionType
-                        animatedTransition:nil
-                                 animation:animation
-                         completionHandler:completionHandler];
-        }
-    } else {
-        if (completionHandler) {
-            completionHandler(NO,nil);
-        }
-    }
+    [self openViewController:viewController transtionType:transtionType animatedTransition:nil animation:animation completionHandler:completionHandler];
 }
 
 /**
@@ -513,7 +488,31 @@ static QBRouter * router = nil;
         animatedTransition:(QBRouterAnimatedTransition *)animatedTransition
                  animation:(BOOL)animation
          completionHandler:(QBRouterCompletionCallback _Nullable)completionHandler {
-    
+    if (viewController) {
+        //根据跳转类型进行跳转
+        UIViewController *topVC = [QBRouterUtils topViewController];
+        QBWeakSelf;
+        //如果顶层是UIAlertController 先移除后弹出
+        if ([topVC isKindOfClass:[UIAlertController class]]) {
+            [topVC dismissViewControllerAnimated:YES completion:^{
+                [weakSelf jumpToViewController:viewController
+                                 transtionType:transtionType
+                            animatedTransition:animatedTransition
+                                     animation:animation
+                             completionHandler:completionHandler];
+            }];
+        } else {
+            [weakSelf jumpToViewController:viewController
+                             transtionType:transtionType
+                        animatedTransition:animatedTransition
+                                 animation:animation
+                         completionHandler:completionHandler];
+        }
+    } else {
+        if (completionHandler) {
+            completionHandler(NO,nil);
+        }
+    }
 }
 
 /**
